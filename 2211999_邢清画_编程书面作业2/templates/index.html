@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>实验2页面</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8) url('{{ url_for('static', filename='background.png') }}') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        .container {
+            border: 3px solid #ccc;
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.7); /* 容器的半透明背景 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            margin-right: 20px;
+        }
+        .info {
+            line-height: 1.6;
+        }
+        h1, h2 {
+            font-weight: bold;
+            text-align: left;
+            margin-top: 0;
+        }
+        hr {
+            margin: 20px 0;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        /* 响应式设计 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .logo {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>基本信息</h2>
+        <div class="header">
+            <!-- 个人LOGO图片 -->
+            <div class="logo">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="个人LOGO" style="width: 100px; height: auto;">
+            </div>
+            <!-- 个人信息 -->
+            <div class="info">
+                <p>姓名：邢清画</p>
+                <p>学号：2211999</p>
+                <p>专业：物联网工程</p>
+                <!-- 音频播放控件 -->
+                <audio controls>
+                    <source src="{{ url_for('static', filename='intro.mp3') }}" type="audio/mpeg">
+                    您的浏览器不支持音频元素。
+                </audio>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- 专业技能部分 -->
+        <h2>专业技能</h2>
+        <ul>
+            <li>学习并使用多门编程语言：C，C++，Java，Python，汇编等。</li>
+            <li>可以实现基本的数据库处理，前端设计，算法设计。</li>
+        </ul>
+
+        <hr>
+
+        <!-- 个人展示部分 -->
+        <h2>相关视频</h2>
+        <ul>
+            <li>2023 南开大学C++程序设计——doodle jump</li>-->
+            <a href="https://www.bilibili.com/video/BV1rT411h7C3/?spm_id_from=333.337.search-card.all.click" target="_blank" title="2023 南开大学C++程序设计——doodle jump">Video path:https://www.bilibili.doodle jump</a>
+
+            <li>2023 南开大学虚假新闻检测高校赛</li>-->
+            <a href="https://www.bilibili.com/video/BV1eg4y1o7iw/?spm_id_from=333.337.search-card.all.click" target="_blank" title="2023 南开大学虚假新闻检测高校赛">Video path:https://www.bilibili.nlp_fakenewsdetection</a>
+    </ul>
+
+        <hr>
+
+<!-- 其他信息部分 -->
+<h2>其他信息</h2>
+<p><strong>兴趣爱好：</strong>羽毛球、乒乓球、听歌、旅游、素描、电子竞技</p>
+
+<!-- MBTI和星座部分 -->
+<p><strong>MBTI：</strong>
+    <span style="display: inline-flex; align-items: center; gap: 10px;">
+        <span style="display: inline-flex; align-items: center;">
+            <img src="{{ url_for('static', filename='ENFJ.png') }}" alt="ENFJ" title="ENFJ" style="width: 32px; height: auto;">
+            <span style="margin-left: 5px;">ENFJ</span>
+        </span>
+        <span>-></span>
+        <span style="display: inline-flex; align-items: center;">
+            <img src="{{ url_for('static', filename='ESFP.png') }}" alt="ESFP" title="ESFP" style="width: 32px; height: auto;">
+            <span style="margin-left: 5px;">ESFP</span>
+        </span>
+        <span>-></span>
+        <span style="display: inline-flex; align-items: center;">
+            <img src="{{ url_for('static', filename='ENFP.png') }}" alt="ENFP" title="ENFP" style="width: 32px; height: auto;">
+            <span style="margin-left: 5px;">ENFP</span>
+        </span>
+        <span>-></span>
+        <span style="display: inline-flex; align-items: center;">
+            <img src="{{ url_for('static', filename='ENFJ.png') }}" alt="ENFJ" title="ENFJ" style="width: 32px; height: auto;">
+            <span style="margin-left: 5px;">ENFJ</span>
+        </span>
+<!--        <span>,</span>-->
+<!--        <span style="display: inline-flex; align-items: center;">-->
+<!--            <img src="{{ url_for('static', filename='Aries.png') }}" alt="白羊座" title="白羊座" style="width: 32px; height: auto;">-->
+<!--            <span style="margin-left: 5px;">白羊座</span>-->
+        </span>
+    </span>
+</p>
+
+    </div>
+</body>
+</html>
